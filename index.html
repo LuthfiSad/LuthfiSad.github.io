@@ -12,6 +12,7 @@
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div id="loaders">
@@ -21,7 +22,7 @@
         <div class="circle"></div>
       </div>
     </div>
-    <div class="flipbook-viewport" id="cover1">
+    <div class="flipbook-viewport">
       <div class="container">
         <div class="flipbook">
           <!-- button -->
@@ -265,20 +266,6 @@
 
             turned: function (event, page, view) {
               disableControls(page);
-              const loader = document.querySelector("#loaders");
-              window.addEventListener("load", function () {
-                loader.style.display = "none";
-              });
-
-              setTimeout(function () {
-                VANTA.CLOUDS({
-                  el: "#cover1",
-                  mouseControls: true,
-                  touchControls: false,
-                  gyroControls: true,
-                  cloudShadowColor: 0x90909,
-                });
-              }, 1000);
               $(this).turn("center");
               if (page == 1) {
                 $(this).turn("peel", "br");
@@ -465,16 +452,10 @@
           }
         });
 
-        // loader
-        // $(window).load(function () {
-        //   $("loaders").delay(3000).fadeOut("slow");
-        // });
-        // const loader = document.querySelector("#loaders");
-        // window.addEventListener("load", function () {
-        //   setTimeout(function () {
-        //     loader.style.display = "none";
-        //   }, 2000);
-        // });
+        const loader = document.querySelector("#loaders");
+        window.addEventListener("load", function () {
+          loader.style.display = "none";
+        });
 
         // checked toggle
         const toggle = document.querySelector("#toggle .theme__toggle");
