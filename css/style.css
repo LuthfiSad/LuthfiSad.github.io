@@ -82,22 +82,28 @@ body:has(> .flipbook-viewport #toggle .theme__toggle:checked) img  {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #001000;
+  background: #84cfea;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 #loaders .loader {
-  height: 450rem;
-  width: 450rem;
+  height: 50rem;
+  width: 180rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin: 0 10rem;
 }
 
 #loaders .loader .circle {
-  background: rgb(255, 255, 255);
-  width: 150rem;
-  height: 150rem;
-  margin: 0 4rem;
+  background: #949c97;
+  width: 50rem;
+  height: 50rem;
   border-radius: 50%;
   animation: animate 2s infinite linear;
 }
@@ -341,18 +347,6 @@ body:has(> .flipbook-viewport #toggle .theme__toggle:checked) img  {
   border: 1rem solid #000;
   border-radius: 6rem;
   box-shadow: #000 0px 0px 0px 2rem inset, rgb(255, 255, 255) 5rem -5rem 0px -3rem, #000 5rem -5rem;
-}
-
-/* cover */
-#cover1 .vanta-canvas {
-  padding: 0;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.page-wrapper[page="1"] {
-  /* display: inline !important; */
-  z-index: -1;
 }
 
 /* #cover2 .vanta-canvas {

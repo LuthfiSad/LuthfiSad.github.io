@@ -199,21 +199,6 @@
         </div>
       </div>
     </div>
-    <!--  -->
-    <script src="js/three.min.js"></script>
-    <script src="js/vanta.clouds.min.js"></script>
-    <!-- SweetAlert2 -->
-    <script src="js/sweetalert2.all.min.js"></script>
-    <!-- Particles -->
-    <script src="js/particles.min.js"></script>
-    <!-- Typeit -->
-    <script src="js/typeit.min.js"></script>
-    <!-- muuri draging grid -->
-    <script src="js/web-animations.min.js"></script>
-    <script src="js/hammer.min.js"></script>
-    <script src="js/muuri.min.js"></script>
-
-    <script src="js/app.js"></script>
     <script type="text/javascript">
       var html5_audiotypes = {
         //define list of audio file extensions
@@ -246,11 +231,6 @@
           };
         }
       }
-      // loader
-      const loader = document.querySelector("#loaders");
-      window.addEventListener("load", function () {
-        loader.style.display = "none";
-      });
       //Initialize sound clips with 1 fallback file each:
       var flip = createsoundbite("audio/effectflip2.wav");
       // var flip = createsoundbite("audio/effectflip2.ogg", "audio/effectflip2.mp3", "audio/effectflip2.wav");
@@ -471,27 +451,32 @@
           }
         });
 
-        // VANTA.CLOUDS({
-        //   el: "#cover",
-        //   mouseControls: true,
-        //   touchControls: true,
-        //   gyroControls: false,
-        //   minHeight: 200.0,
-        //   minWidth: 200.0,
-        //   skyColor: 0x414141,
-        //   cloudColor: 0x7a7a7a,
-        //   cloudShadowColor: 0x90909,
-        //   sunColor: 0x0,
-        //   sunGlareColor: 0x0,
-        //   sunlightColor: 0x0,
+        // loader
+        // $(window).load(function () {
+        //   $("loaders").delay(3000).fadeOut("slow");
         // });
-        VANTA.CLOUDS({
-          el: "#cover1",
-          mouseControls: true,
-          touchControls: false,
-          gyroControls: true,
-          cloudShadowColor: 0x90909,
+        // const loader = document.querySelector("#loaders");
+        // window.addEventListener("load", function () {
+        //   setTimeout(function () {
+        //     loader.style.display = "none";
+        //   }, 2000);
+        // });
+        const loader = document.querySelector("#loaders");
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            loader.style.display = "none";
+          }, 2000);
         });
+
+        setTimeout(function () {
+          VANTA.CLOUDS({
+            el: "#cover1",
+            mouseControls: true,
+            touchControls: false,
+            gyroControls: true,
+            cloudShadowColor: 0x90909,
+          });
+        }, 2000);
 
         // checked toggle
         const toggle = document.querySelector("#toggle .theme__toggle");
@@ -503,7 +488,7 @@
             });
           } else {
             imageIcon.forEach((icon) => {
-              icon.style.backgroundColor = "#000";
+              icon.style.backgroundColor = "#fff";
             });
           }
         });
@@ -517,7 +502,21 @@
         test: Modernizr.csstransforms,
         yep: ["js/turn8.min.js"],
         nope: ["js/turn.html4.min.js"],
-        both: ["js/zoom.min.js", "js/basic.js", "js/scissor.min.js", "css/style.css"],
+        both: [
+          "js/zoom.min.js",
+          "js/basic.js",
+          "js/scissor.min.js",
+          "css/style.css",
+          "js/three.min.js", // canva
+          "js/vanta.clouds.min.js",
+          "js/sweetalert2.all.min.js", // SweetAlert2
+          "js/particles.min.js", // Particles
+          "js/typeit.min.js", // Typeit
+          "js/web-animations.min.js", // muuri draging grid
+          "js/hammer.min.js",
+          "js/muuri.min.js",
+          "js/app.js",
+        ],
         complete: loadApp,
       });
     </script>
