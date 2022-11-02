@@ -200,7 +200,14 @@
         </div>
       </div>
     </div>
+    <!-- particles -->
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.js"></script>
     <script type="text/javascript">
+      const loader = document.querySelector("#loaders");
+      window.addEventListener("load", function () {
+        (loader.style.display = "none"), (loader.style.zIndex = "0");
+      });
       var html5_audiotypes = {
         //define list of audio file extensions
         // mp3: "audio/mpeg",
@@ -452,11 +459,6 @@
           }
         });
 
-        const loader = document.querySelector("#loaders");
-        window.addEventListener("load", function () {
-          loader.style.display = "none";
-        });
-
         // checked toggle
         const toggle = document.querySelector("#toggle .theme__toggle");
         const imageIcon = document.querySelectorAll(".flipbook-viewport .p5 .main .grid .item img");
@@ -486,15 +488,11 @@
           "js/basic.js",
           "js/scissor.min.js",
           "css/style.css",
-          "js/three.min.js", // canva
-          "js/vanta.clouds.min.js",
           "js/sweetalert2.all.min.js", // SweetAlert2
-          "js/particles.min.js", // Particles
           "js/typeit.min.js", // Typeit
           "js/web-animations.min.js", // muuri draging grid
           "js/hammer.min.js",
           "js/muuri.min.js",
-          "js/app.js",
         ],
         complete: loadApp,
       });
