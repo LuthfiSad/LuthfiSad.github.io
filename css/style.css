@@ -76,7 +76,7 @@ body:has(> .flipbook-viewport #toggle .theme__toggle:checked) img  {
 
 /* load */
 #loaders {
-  z-index: 1000;
+  z-index: 500;
   width: 100vw;
   height: 100vh;
   display: flex;

@@ -265,6 +265,22 @@
 
             turned: function (event, page, view) {
               disableControls(page);
+              const loader = document.querySelector("#loaders");
+              window.addEventListener("load", function () {
+                setTimeout(function () {
+                  loader.style.display = "none";
+                }, 3000);
+              });
+
+              setTimeout(function () {
+                VANTA.CLOUDS({
+                  el: "#cover1",
+                  mouseControls: true,
+                  touchControls: false,
+                  gyroControls: true,
+                  cloudShadowColor: 0x90909,
+                });
+              }, 3000);
               $(this).turn("center");
               if (page == 1) {
                 $(this).turn("peel", "br");
@@ -461,22 +477,6 @@
         //     loader.style.display = "none";
         //   }, 2000);
         // });
-        const loader = document.querySelector("#loaders");
-        window.addEventListener("load", function () {
-          setTimeout(function () {
-            loader.style.display = "none";
-          }, 2000);
-        });
-
-        setTimeout(function () {
-          VANTA.CLOUDS({
-            el: "#cover1",
-            mouseControls: true,
-            touchControls: false,
-            gyroControls: true,
-            cloudShadowColor: 0x90909,
-          });
-        }, 2000);
 
         // checked toggle
         const toggle = document.querySelector("#toggle .theme__toggle");
