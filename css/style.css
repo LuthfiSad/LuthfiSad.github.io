@@ -16,6 +16,12 @@
   }
 }
 
+@media (max-height: 600px) and (max-width:992px) {
+  :root {
+    font-size: calc(((((100vh / 2) * (14 / 300)) / 14)+(((100vw / 2) * (14 / 461)) / 14)) / 2);
+  }
+}
+
 body {
   font-family: "JetBrains Mono", "Courier New", Courier, monospace;
   overflow: hidden;
@@ -380,7 +386,7 @@ html:has(> body .flipbook-viewport #toggle .theme__toggle:checked) img  {
 }
 
 .swal2-container .swal2-html-container {
-  max-height: 400rem;
+  max-height: 200rem;
   /* overflow: ; */
 }
 
